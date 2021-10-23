@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# Company
+
+Company.destroy_all
+
+company1 = Company.create(name: 'Company1', email: 'company1@company1.com', phone_number: '111-111-1111', description: 'First company')
+company2 = Company.create(name: 'Company2', email: 'company2@company2.com', phone_number: '222-222-2222', description: 'Second company')
+company3 = Company.create(name: 'Company3', email: 'company3@company3.com', phone_number: '333-333-3333', description: 'Third company')
+
+# Truck
+
