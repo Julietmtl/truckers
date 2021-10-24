@@ -1,7 +1,7 @@
 class Admin::TrucksController < ApplicationController
 
   def index
-    @trucks = Truck.order(id: :desc).all
+    @trucks = Truck.all
   end
 
   def new
@@ -15,5 +15,17 @@ class Admin::TrucksController < ApplicationController
   def destroy
     @truck = Truck.find params[:id]
     @truck.destroy
+  end
+
+  private
+
+  def trucks_params
+    params.require(:product).permit(
+      :name,
+      :year,
+      :truck_type,
+      :capacity,
+      :reserved
+    )
   end
 end

@@ -1,0 +1,21 @@
+<tr>
+  <td>
+    <%= truck.name %>
+    </td>
+    <td>
+    <%= truck.truck_type %>
+  </td>
+  <td>
+    <%= truck.year %>
+  </td>
+  <td>
+    <%= truck.capacity %>
+  </td>
+  <td>
+    <%= truck.reserved %>
+  </td>
+  <td>
+    <%= link_to 'delete', [:admin, truck], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+    <%= link_to 'edit', [:admin, truck], class: 'btn btn-sm btn-danger', method: :edit %>
+  </td>
+</tr>
