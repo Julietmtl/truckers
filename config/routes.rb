@@ -9,4 +9,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#new', :as => :login
   post '/logout' => 'sessions#destroy', :as => :logout
   post '/sessions/create' => 'sessions#create'
+  resources :trucks, only: [:index, :show]
+
+  namespace :admin do
+    resources :trucks
+  end
 end
