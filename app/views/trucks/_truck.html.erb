@@ -1,15 +1,22 @@
 <article class="truck">
   <header>
-  <% if truck.reserved == true%>
-    <div class="unavailable">Unavailable!</div>
-  <% end %>
+    <% if truck.reserved == true%>
+      <div class="unavailable">Unavailable!</div>
+    <% end %>
     <%= link_to truck do %>
-      <h4><%= truck.name %></h4>
+      <h4>Name: <%= truck.name %></h4>
     <% end %>
   </header>
-  <p class="truck_type">
-    <%= truck.truck_type %>
-  </p>
+    <p class="truck_info">
+      Type:
+      <%= truck.truck_type %>
+      <br>
+      Year:
+      <%= truck.year %>
+      <br>
+      Capacity:
+      <%= truck.capacity %>
+    </p>
   <footer class="actions">
   <% if truck.reserved == false%>
     <%= link_to truck, class: 'btn btn-primary' , method: :post do %>
@@ -20,8 +27,4 @@
       Details
     <% end %>
   </footer>
-
-  <aside class="capacity">
-    <%= truck.capacity %>
-  </aside>
 </article>

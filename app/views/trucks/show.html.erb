@@ -1,0 +1,27 @@
+<section class="trucks-show">
+
+  <header class="page-header">
+    <h1> <%= @truck.name %></h1>
+  </header>
+
+  <article class="truck-detail">
+
+    <div class="row">
+
+      <div class="col-sm-8">
+        <dl class="dl-horizontal">
+          <dt>Name</dt>
+          <dd><%= @truck.name %></dd>
+          <dt>Type</dt>
+          <dd><%= @truck.truck_type %></dd>
+          <dt>Year</dt>
+          <dd><%= @truck.year %></dd>
+          <dt>Capacity</dt>
+          <dd><%= @truck.capacity %></dd>
+        </dl>
+      </div>
+    </div>
+
+  </article>
+
+</section>
