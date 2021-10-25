@@ -25,16 +25,16 @@ class Admin::TrucksController < ApplicationController
   def update
     @truck = Truck.find(params[:id])
       if @truck.update(truck_params)
-        redirect_to admin_trucks_url
+        redirect_to [:admin, :trucks]
       else
-        render 'edit'
+        render :edit
       end
     end
 
   def destroy
     @truck = Truck.find params[:id]
     @truck.destroy
-    redirect_to @truck
+    redirect_to [:admin, :trucks], notice: 'Truck deleted!'
   end
 
   private
