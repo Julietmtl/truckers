@@ -2,6 +2,7 @@ class Admin::TrucksController < ApplicationController
 
   def index
     @trucks = Truck.all
+    @truck = Truck.all
   end
 
   def new
@@ -39,7 +40,7 @@ class Admin::TrucksController < ApplicationController
   private
 
   def trucks_params
-    params.require(:product).permit(
+    params.require(:truck).permit(
       :name,
       :year,
       :truck_type,

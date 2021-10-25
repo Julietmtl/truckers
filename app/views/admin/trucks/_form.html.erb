@@ -1,4 +1,4 @@
-<%= form_for(@trucks) do |f| %>
+<%= form_for(@truck) do |f| %>
   <% if @truck.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@truck.errors.count, "error") %> prohibited this truck from being saved:</h2>
@@ -16,13 +16,18 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :type %>
-    <%= f.text_field :type %>
+    <%= f.label :truck_type %>
+    <%= f.text_field :truck_type %>
   </div>
   <div class="field">
-    <%= f.label :location %>
-    <%= f.text_field :location %>
+    <%= f.label :year %>
+    <%= f.text_field :year %>
   </div>
+  <div class="field">
+    <%= f.label :capacity %>
+    <%= f.text_field :capacity %>
+  </div>
+
   <div class="actions">
     <%= f.submit(:class  => "btn btn-primary") %>
   </div>
