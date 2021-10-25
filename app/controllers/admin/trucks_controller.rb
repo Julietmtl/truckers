@@ -6,7 +6,7 @@ class Admin::TrucksController < ApplicationController
   end
 
   def new
-    @truck = Truck.new
+    @truck = Truck.new(reserved: false)
   end
 
   def create
@@ -25,7 +25,7 @@ class Admin::TrucksController < ApplicationController
   def update
     @truck = Truck.find(params[:id])
       if @truck.update(truck_params)
-        redirect_to @truck
+        redirect_to admin_trucks_url
       else
         render 'edit'
       end
@@ -39,9 +39,10 @@ class Admin::TrucksController < ApplicationController
 
   private
 
-  def trucks_params
+  def truck_params
     params.require(:truck).permit(
       :name,
+      :company_id,
       :year,
       :truck_type,
       :capacity,

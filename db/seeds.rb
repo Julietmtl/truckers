@@ -18,4 +18,4 @@ company3 = Company.create(name: 'Company3', email: 'company3@company3.com', phon
 # Truck
 Truck.destroy_all
 
-Truck.create({name: 'Ace', company_id: 1, truck_type: 'Big', year: 2021, capacity: 1000, reserved: false})
+company1.trucks.create({name: 'Ace', truck_type: 'Big', year: 2021, capacity: 1000, reserved: false})
